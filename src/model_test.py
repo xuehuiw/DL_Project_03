@@ -15,7 +15,7 @@ plt.rcParams['font.sans-serif'] = ['SimHei']
 plt.rcParams['axes.unicode_minus'] = False
 
 # 导入数据集
-dataset = pd.read_csv("data\data.csv")
+dataset = pd.read_csv("data/data.csv")
 # print(dataset)
 
 # 将数据进行归一化
@@ -35,7 +35,7 @@ Y = dataset_sc.iloc[:, -1]
 x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.05, random_state=42)
 
 # 加载已经训练好的模型
-model = load_model("output\model.h5")
+model = load_model("output/model.h5", compile=False)
 
 # 利用训练好的模型进行预测
 yhat = model.predict(x_test)
